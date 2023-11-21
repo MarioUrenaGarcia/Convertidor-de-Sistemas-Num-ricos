@@ -36,7 +36,6 @@ int main(int argc, char *argv[])
         if (entrada[i] == '1')
         {
             salida = salida + pow(2, strlen(entrada) - 1 - i);
-            printf("%d\n", salida);
         }
         else if (entrada[i] == '0')
         {
