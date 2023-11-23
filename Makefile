@@ -11,4 +11,3 @@ alfaconv.o: alfaconv.c
 
 clean:
 	rm *.o
-	rm ejecutable
