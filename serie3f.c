@@ -7,7 +7,7 @@
 
   Mario Ureña García
 
-  Descripción e intención del programa: Convierte de Decimal a Hexadecimal
+  Descripción e intención del programa: Convierte de Decimal a Octal
 
   Entradas: Numero Decimal
 

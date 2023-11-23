@@ -9,9 +9,9 @@
 
   Descripción e intención del programa: Convierte de Hexadecimal a Binario
 
-  Entradas: Numero Binario
+  Entradas: Numero Hexadecimal
 
-  Salidas: Numero Hexadecimal
+  Salidas: Numero Binario
 
 */
 

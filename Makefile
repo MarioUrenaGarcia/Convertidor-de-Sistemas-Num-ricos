@@ -1,10 +1,10 @@
-ejecutable: main.o alfaconv.o
-	gcc -o serie3i main.o alfaconv.o -lm
+ejecutable: serie3i.o alfaconv.o
+	gcc -o serie3i.out serie3i.o alfaconv.o -lm
 	clear
-	./serie3i
+	./serie3i.out
 
-main.o: main.c
-	gcc -c main.c
+main.o: serie3i.c
+	gcc -c serie3i.c
 
 alfaconv.o: alfaconv.c
 	gcc -c alfaconv.c

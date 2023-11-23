@@ -24,19 +24,19 @@
 
 int main(int argc, char *argv[])
 {
-    printf("\n\n\tEste código fue creado por Mario Ureña García\n\n");
+  printf("\n\n\tEste código fue creado por Mario Ureña García\n\n");
 
-    // Variables
-    char entrada[264];
-    // Procesos
-    printf("Ingrese:    ");
-    scanf("%s", entrada);
+  // Variables
+  char entrada[264];
+  // Procesos
+  printf("Ingrese:    ");
+  scanf("%s", entrada);
 
-    hex_conv_dec(entrada);
+  hex_to_dec(entrada);
 
-    // FINALIZACIÓN DEL PROGRAMA
-    printf("\n\n\tPrograma Finalizado con ÉXITO\n\n");
-    return 0;
+  // FINALIZACIÓN DEL PROGRAMA
+  printf("\n\n\tPrograma Finalizado con ÉXITO\n\n");
+  return 0;
 }
 
 // Funciones -----------------------------------------------------------------------
