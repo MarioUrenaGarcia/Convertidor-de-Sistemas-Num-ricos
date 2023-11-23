@@ -202,6 +202,8 @@ char dec_to_hex(int entrada) // serie3d
         salida[j] = conversion[i];
         j++;
     }
+    salida[j] = '\0';
+
     printf("\n\n%s", salida);
     return salida;
 }
@@ -307,7 +309,7 @@ char dec_to_oct(int entrada) // serie3f
         salida[j] = conversion[i];
         j++;
     }
-
+    salida[j] = '\0';
     printf("\n\n%s", salida);
     return salida;
 }
