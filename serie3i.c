@@ -28,10 +28,15 @@ int main(int argc, char *argv[])
 
   // Variables
   char entrada[256];
-  char salida[264];
+  char salida[256];
   char conversion[2];
   int proceso = 0;
   int entrada_int = 0;
+  int salida_int = 0;
+  int abrir = 0;
+
+  FILE *fp;
+  char archivo[256];
 
   // Procesos
   if (argc < 2)
@@ -39,8 +44,17 @@ int main(int argc, char *argv[])
     printf("Ingrese un número:    ");
     scanf("%s", entrada);
 
-    printf("Ingrese la base de salida:    ");
+    printf("\nIngrese la base de salida:    ");
     scanf("%s", conversion);
+
+    printf("\n¿Desea guardar el resultado en un archivo? (1 = Sí, 0 = No):    ");
+    scanf("%d", &abrir);
+
+    if (abrir == 1)
+    {
+      printf("\nIngrese el nombre del archivo:    ");
+      scanf("%s", archivo);
+    }
   }
 
   if (entrada[0] == '0' && entrada[1] != 'x')
@@ -71,7 +85,7 @@ int main(int argc, char *argv[])
   {
     printf("\n\nDECIMAL A HEXADECIMAL");
     entrada_int = atoi(entrada);
-    dec_to_hex(entrada_int);
+    dec_to_hex(entrada_int, salida);
   }
 
   else if (proceso == 4 && strcmp(conversion, "0") == 0)
@@ -95,7 +109,7 @@ int main(int argc, char *argv[])
   else if (proceso == 2 && strcmp(conversion, "d") == 0)
   {
     printf("\n\nHEXADECIMAL A DECIMAL");
-    hex_to_dec(entrada);
+    salida_int = hex_to_dec(entrada);
   }
 
   else if (proceso == 2 && strcmp(conversion, "b") == 0)
@@ -107,11 +121,18 @@ int main(int argc, char *argv[])
   else if (proceso == 1 && strcmp(conversion, "d") == 0)
   {
     printf("\n\nOCTAL A DECIMAL");
-    oct_to_dec(entrada);
+    salida_int = oct_to_dec(entrada);
   }
   else
   {
     printf("\n\n\tNo Implementado");
+  }
+
+  if (abrir == 1)
+  {
+    fp = fopen(archivo, "a");
+    fprintf(fp, "%s  ->  %s \n", entrada, salida);
+    fclose(fp);
   }
   // FINALIZACIÓN DEL PROGRAMA
   printf("\n\n\tPrograma Finalizado con ÉXITO\n\n");

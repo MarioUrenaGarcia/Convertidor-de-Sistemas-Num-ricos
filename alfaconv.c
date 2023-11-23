@@ -119,11 +119,11 @@ int oct_to_dec(int entrada[256]) // Serie 3c
 
   Salidas: Numero Hexadecimal
 */
-char dec_to_hex(int entrada) // serie3d
+void dec_to_hex(int entrada, char res[]) // serie3d
 {
     // Variables
-    char salida[264];
     char conversion[256];
+    char salida[256];
     int i;
     int j = 0;
 
@@ -205,7 +205,7 @@ char dec_to_hex(int entrada) // serie3d
     salida[j] = '\0';
 
     printf("\n\n%s", salida);
-    return salida;
+    strcpy(res, salida);
 }
 
 /*
@@ -243,6 +243,7 @@ char dec_to_bin(int entrada) // serie3e
         salida[j] = conversion[i];
         j++;
     }
+    salida[j] = '\0';
 
     printf("\n\n%s", salida);
     return salida;
