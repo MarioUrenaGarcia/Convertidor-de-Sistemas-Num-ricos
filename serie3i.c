@@ -4,17 +4,20 @@
 #include <math.h>
 #include <string.h>
 
-/*
-
-  Mario Ureña García
-
-  Descripción e intención del programa:
-
-  Entradas:
-
-  Salidas:
-
-*/
+/**
+ * Mario Ureña Garcpua
+ *
+ * Este programa permite al usuario convertir números entre sistemas numéricos decimal, binario, octal y hexadecimal.
+ * Entradas:
+ * - Número de entrada: El número a convertir.
+ * - Base de salida: El sistema numérico deseado para la salida.
+ * - Guardar resultado: si se guarda el resultado en un archivo.
+ *
+ * Salidas:
+ * - Número convertido: El resultado de la conversión.
+ * - Salida de archivo: si está habilitado, el programa guarda el resultado de la conversión en un archivo.
+ *
+ */
 
 // Main ----------------------------------------------------------------------------
 int main(int argc, char *argv[])
