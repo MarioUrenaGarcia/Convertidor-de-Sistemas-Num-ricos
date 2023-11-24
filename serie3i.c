@@ -52,6 +52,59 @@ int main(int argc, char *argv[])
       scanf("%s", archivo);
     }
   }
+  else if (argc == 2)
+  {
+    strcpy(entrada, argv[1]);
+
+    printf("\nIngrese la base de salida:    ");
+    scanf("%s", conversion);
+
+    printf("\n¿Desea guardar el resultado en un archivo? (1 = Sí, 0 = No):    ");
+    scanf("%d", &abrir);
+
+    if (abrir == 1)
+    {
+      printf("\nIngrese el nombre del archivo:    ");
+      scanf("%s", archivo);
+    }
+  }
+  else if (argc == 3)
+  {
+    strcpy(entrada, argv[1]);
+    strcpy(conversion, argv[2]);
+
+    printf("\n¿Desea guardar el resultado en un archivo? (1 = Sí, 0 = No):    ");
+    scanf("%d", &abrir);
+
+    if (abrir == 1)
+    {
+      printf("\nIngrese el nombre del archivo:    ");
+      scanf("%s", archivo);
+    }
+  }
+  else if (argc == 4 && strcmp(argv[3], "-f") == 0)
+  {
+    strcpy(entrada, argv[1]);
+    strcpy(conversion, argv[2]);
+    abrir = 1;
+    if (abrir == 1)
+    {
+      printf("\nIngrese el nombre del archivo:    ");
+      scanf("%s", archivo);
+    }
+  }
+  else if (argc == 5)
+  {
+    strcpy(entrada, argv[1]);
+    strcpy(conversion, argv[2]);
+    strcpy(archivo, argv[4]);
+    abrir = 1;
+  }
+  else
+  {
+    printf("\n\n\tEntrada no válida\n\n");
+    return 1;
+  }
 
   if (entrada[0] == '0' && entrada[1] != 'x')
   {
@@ -60,6 +113,16 @@ int main(int argc, char *argv[])
     for (int i = 0; i < strlen(entrada); i++) // borrar el 0 del inicio
     {
       entrada[i] = entrada[i + 1];
+    }
+
+    // Comprobar que todos los caracteres sean 0, 1, 2, 3, 4, 5, 6, 7
+    for (int i = 0; i < strlen(entrada); i++)
+    {
+      if (entrada[i] != '0' && entrada[i] != '1' && entrada[i] != '2' && entrada[i] != '3' && entrada[i] != '4' && entrada[i] != '5' && entrada[i] != '6' && entrada[i] != '7')
+      {
+        printf("\n\n\tEntrada no válida\n\n");
+        return 1;
+      }
     }
   }
   else if (entrada[0] == '0' && entrada[1] == 'x' || entrada[1] == 'X')
@@ -70,6 +133,16 @@ int main(int argc, char *argv[])
     {
       entrada[i] = entrada[i + 2];
     }
+
+    // Comprobar que todos los caracteres sean 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
+    for (int i = 0; i < strlen(entrada); i++)
+    {
+      if (entrada[i] != '0' && entrada[i] != '1' && entrada[i] != '2' && entrada[i] != '3' && entrada[i] != '4' && entrada[i] != '5' && entrada[i] != '6' && entrada[i] != '7' && entrada[i] != '8' && entrada[i] != '9' && entrada[i] != 'A' && entrada[i] != 'B' && entrada[i] != 'C' && entrada[i] != 'D' && entrada[i] != 'E' && entrada[i] != 'F' && entrada[i] != 'a' && entrada[i] != 'b' && entrada[i] != 'c' && entrada[i] != 'd' && entrada[i] != 'e' && entrada[i] != 'f')
+      {
+        printf("\n\n\tEntrada no válida\n\n");
+        return 1;
+      }
+    }
   }
   else if (entrada[0] == 'b')
   {
@@ -79,9 +152,28 @@ int main(int argc, char *argv[])
     {
       entrada[i] = entrada[i + 1];
     }
+
+    // Comprobar que todos los caracteres sean 0, 1
+    for (int i = 0; i < strlen(entrada); i++)
+    {
+      if (entrada[i] != '0' && entrada[i] != '1')
+      {
+        printf("\n\n\tEntrada no válida\n\n");
+        return 1;
+      }
+    }
   }
   else
   {
+    // Comprobar que todos los caracteres sean 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    for (int i = 0; i < strlen(entrada); i++)
+    {
+      if (entrada[i] != '0' && entrada[i] != '1' && entrada[i] != '2' && entrada[i] != '3' && entrada[i] != '4' && entrada[i] != '5' && entrada[i] != '6' && entrada[i] != '7' && entrada[i] != '8' && entrada[i] != '9')
+      {
+        printf("\n\n\tEntrada no válida\n\n");
+        return 1;
+      }
+    }
     proceso = 4; // La entrada es un decimal
   }
 
