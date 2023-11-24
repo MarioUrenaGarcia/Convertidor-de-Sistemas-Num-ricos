@@ -159,6 +159,18 @@ int main(int argc, char *argv[])
     else if (out == 2)
     {
       fp = fopen(archivo, "a");
+      if (proceso == 1)
+      {
+        fprintf(fp, "0");
+      }
+      else if (proceso == 2)
+      {
+        fprintf(fp, "0x");
+      }
+      else if (proceso == 3)
+      {
+        fprintf(fp, "b");
+      }
       fprintf(fp, "%s  ->  %d \n", entrada, salida_int);
       fclose(fp);
     }
