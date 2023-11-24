@@ -95,7 +95,7 @@ int bin_to_dec(char entrada[264]) // serie3b
   Salidas: Numero Decimal
 */
 
-int oct_to_dec(int entrada[256]) // Serie 3c
+int oct_to_dec(char entrada[256]) // Serie 3c
 {
     // Variables
     int salida = 0;
@@ -122,8 +122,8 @@ int oct_to_dec(int entrada[256]) // Serie 3c
 void dec_to_hex(int entrada, char res[]) // serie3d
 {
     // Variables
-    char conversion[256];
-    char salida[256];
+    char conversion[256] = {0};
+    char salida[256] = {0};
     int i;
     int j = 0;
 
@@ -215,11 +215,11 @@ void dec_to_hex(int entrada, char res[]) // serie3d
 
   Salidas: Numero Binario
 */
-char dec_to_bin(int entrada) // serie3e
+char dec_to_bin(int entrada, char res[]) // serie3e
 {
     // Variables
-    char salida[264];
-    char conversion[256];
+    char salida[264] = {0};
+    char conversion[256] = {0};
     int i;
     int j = 0;
 
@@ -246,7 +246,7 @@ char dec_to_bin(int entrada) // serie3e
     salida[j] = '\0';
 
     printf("\n\n%s", salida);
-    return salida;
+    strcpy(res, salida);
 }
 
 /*
@@ -258,11 +258,11 @@ char dec_to_bin(int entrada) // serie3e
   Salidas: Numero Octal
 
 */
-char dec_to_oct(int entrada) // serie3f
+char dec_to_oct(int entrada, char res[]) // serie3f
 {
     // Variables
-    char salida[264];
-    char conversion[256];
+    char salida[264] = {0};
+    char conversion[256] = {0};
     int i;
     int j = 0;
 
@@ -312,7 +312,7 @@ char dec_to_oct(int entrada) // serie3f
     }
     salida[j] = '\0';
     printf("\n\n%s", salida);
-    return salida;
+    strcpy(res, salida);
 }
 
 /*
@@ -323,14 +323,14 @@ char dec_to_oct(int entrada) // serie3f
   Salidas: Numero Hexadecimal
 
 */
-char bin_to_hex(char entrada[256]) // serie3g
+void bin_to_hex(char entrada[256], char res[]) // serie3g
 {
     printf("\n\n\tEste código fue creado por Mario Ureña García\n\n");
 
     // Variables
-    char entrada_copia[264];
-    char salida[264];
-    char cuarteto[5];
+    char entrada_copia[264] = {0};
+    char salida[264] = {0};
+    char cuarteto[5] = {0};
     int espacios = 0;
     int i;
     int j;
@@ -426,7 +426,7 @@ char bin_to_hex(char entrada[256]) // serie3g
     }
 
     printf("\n\n%s", salida);
-    return salida;
+    strcpy(res, salida);
 }
 
 /*
@@ -440,10 +440,10 @@ char bin_to_hex(char entrada[256]) // serie3g
   Salidas: Numero Binario
 
 */
-char hex_to_bin(char entrada[256]) // serie 3h
+void hex_to_bin(char entrada[256], char res[]) // serie 3h
 {
     // Variables
-    char salida[264];
+    char salida[264] = {0};
     int i;
 
     // Procesos
@@ -515,5 +515,5 @@ char hex_to_bin(char entrada[256]) // serie 3h
         }
     }
     printf("\n\n%s", salida);
-    return salida;
+    strcpy(res, salida);
 }
